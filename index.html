@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Job–CV Match</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Job–CV Match</h1>
+      <p class="sub">Paste a Job Description and a Candidate CV. Click <em>Evaluate Match</em>.</p>
+    </header>
+
+    <main class="container">
+      <section class="panel">
+        <label for="jobText" class="panel-title">Job Description</label>
+        <textarea id="jobText" placeholder="Paste or type the Job Description…" aria-label="Job Description input"></textarea>
+        <div class="helper">Tip: You can paste from Word/PDF – we'll clean basic formatting.</div>
+      </section>
+
+      <section class="panel">
+        <label for="cvText" class="panel-title">Candidate CV</label>
+        <textarea id="cvText" placeholder="Paste or type the Candidate CV…" aria-label="Candidate CV input"></textarea>
+      </section>
+
+      <section class="controls">
+        <button id="evaluateBtn" class="primary">Evaluate Match</button>
+        <span id="loadingText" class="loading-text" style="display: none;">Analyzing...</span>
+      </section>
+
+      <section id="result" class="result" aria-live="polite" aria-atomic="true">
+        <div class="placeholder">Score & explanation will appear here.</div>
+      </section>
+
+      <section class="footnote">
+        <details>
+          <summary>How scoring works</summary>
+          <p>The system uses a trained neural network that learned from 2,400+ historical hiring decisions. It analyzes job requirements against candidate qualifications using natural language processing (NLP) and deep learning. The model extracts key skills, experience, and requirements from both texts, then predicts a match score from 1 (poor fit) to 10 (excellent fit) based on patterns learned from past successful and unsuccessful hires.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <small>© 2025 Bara Zwyrtek • Bachelor Project</small>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
